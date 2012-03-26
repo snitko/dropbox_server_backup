@@ -17,10 +17,11 @@ Jeweler::Tasks.new do |gem|
   gem.name = "dropbox_server_backup"
   gem.homepage = "http://github.com/snitko/dropbox_server_backup"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Backs up stuff from your server to your Dropbox account}
+  gem.description = %Q{Backs up stuff from your server to your Dropbox account}
   gem.email = "roman.snitko@gmail.com"
   gem.authors = ["Roman Snitko"]
+  gem.executables << 'dropbox_server_backup'
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -32,17 +33,9 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
-
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
