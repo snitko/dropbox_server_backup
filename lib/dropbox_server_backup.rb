@@ -6,6 +6,8 @@ c = Term::ANSIColor
 
 if ARGV[0] == "setup"
   
+  # TODO: make this a flag, not an argument, like this:
+  #       dropbox_server_backup --settings-dir=/etc/dropbox_server_backup
   settings_path = ARGV[1] || "/etc/dropbox_server_backup"
   
   print c.bold, c.on_yellow, "Setting up dropbox server backup utility...", c.clear, "\n"

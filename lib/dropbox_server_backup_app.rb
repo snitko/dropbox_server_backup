@@ -39,6 +39,12 @@ class DropboxServerBackupApp
     end
   end
 
+  # TODO: make this method write actual logs to some file.
+  # We'd have to create a log file in the directory defined during the setup process.
+  # Because log dirs may differ on different systems, it would be nice to have some default
+  # dir hardcoded and then allow to set it using a flag, like that:
+  #
+  #   dropbox_server_backup setup --log-dir=/var/log
   def log(message, error=false)
     full_message = ""
     full_message += "ERROR: " if error
